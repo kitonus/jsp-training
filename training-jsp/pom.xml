@@ -20,6 +20,8 @@
 		  	<webApp>
 		  		<contextPath>/hello</contextPath>
 		  	</webApp>
+		  	<reload>automatic</reload>
+		  	<scanIntervalSeconds>5</scanIntervalSeconds>
 		  </configuration>
 		</plugin>
   	</plugins>
