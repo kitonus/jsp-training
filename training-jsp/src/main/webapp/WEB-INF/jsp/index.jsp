@@ -23,7 +23,8 @@
 		<jsp:declaration>int k = 3;</jsp:declaration>
 		
 		<p><%= i %>+<%= j %>+<%= k %>=<%= i + j + k %></p>
-		 
+		
+		<%-- These are examples of how to use custom tag directive above --%> 
 		<c:set var="sum" value="2000"/>
 		<f:formatNumber type="number" pattern="#0.00" value="${sum}"/>
 	</body>
