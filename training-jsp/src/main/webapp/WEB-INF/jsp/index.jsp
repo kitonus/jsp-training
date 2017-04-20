@@ -5,6 +5,16 @@
            uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="f" 
            uri="http://java.sun.com/jsp/jstl/fmt" %>
+           
+<%! 
+public int sum(int i, int j, int k){
+		return i+j+k;
+}
+
+public void jspInit(){
+	System.out.println("JSP init is called!!!");
+}
+%>
 <html>
 	<head>
 		<title>Example of Comments, Scriptlets, Expressions, Declarations</title>
@@ -22,7 +32,7 @@
 		<%! int i = 1, j = 2; %>
 		<jsp:declaration>int k = 3;</jsp:declaration>
 		
-		<p><%= i %>+<%= j %>+<%= k %>=<%= i + j + k %></p>
+		<p><%= i %>+<%= j %>+<%= k %>=<%= sum(i, j, k) %></p>
 		
 		<%-- These are examples of how to use custom tag directive above --%> 
 		<c:set var="sum" value="2000"/>
