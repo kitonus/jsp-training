@@ -9,5 +9,10 @@
 <body>
 	<h1>${message}</h1>
 	<h2><%=request.getAttribute("message") %></h2>
+	
+	<jsp:useBean id="aBean" scope="request" class="com.indivaragroup.training.jsp.model.ABean"/>
+	<jsp:setProperty property="name" name="aBean" value="Budi"/>
+	
+	<p>My name is ${aBean.name}</p>
 </body>
 </html>
