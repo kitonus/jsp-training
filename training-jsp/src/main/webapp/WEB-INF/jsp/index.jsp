@@ -19,5 +19,8 @@
 		}
 		%>
 		<h1>Hello World! <%= request.getParameter("name")%></h1>
+		<form action="<%= request.getContextPath()%>/our_app/workspace">
+			<input type="submit" value="Enter!"/>
+		</form>
 	</body>
 </html>
