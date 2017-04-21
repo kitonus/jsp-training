@@ -4,6 +4,7 @@
            uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" 
            uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="h" uri="/WEB-INF/tld/hello.tld"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,5 +27,7 @@
 		</c:if>
 		<li>time: <fmt:formatDate value="${trx.trxTimestamp }" pattern="dd-MMM-yyyy"/></li>
 	</ul>
+	
+	<p><h:Hello/></p>
 </body>
 </html>
