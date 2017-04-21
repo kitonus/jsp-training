@@ -14,5 +14,13 @@
 	<jsp:setProperty property="name" name="aBean" value="Budi"/>
 	
 	<p>My name is ${aBean.name}</p>
+	
+	<p>Transaction:</p>
+	<ul>
+		<li>ID: ${trx.trxId}</li>
+		<li>type: ${trx.trxType }</li>
+		<li>amount: ${trx.amount }</li>
+		<li>time: ${trx.trxTimestamp }</li>
+	</ul>
 </body>
 </html>
