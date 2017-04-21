@@ -14,12 +14,13 @@
 		<title>Hello</title>
 	</head>
 	<body>
-		<% if (request.getParameter("name") == null){
-			throw new RuntimeException("No Name");
-		}
+		<%
+		session.invalidate();//invalidates session
 		%>
-		<h1>Hello World! <%= request.getParameter("name")%></h1>
+		<h1>Hello World!</h1>
 		<form action="<%= request.getContextPath()%>/our_app/workspace">
+			<input type="text" name="myname" 
+			value="<%= request.getParameter("name") == null ? "" : request.getParameter("name")%>"/>
 			<input type="submit" value="Enter!"/>
 		</form>
 	</body>
