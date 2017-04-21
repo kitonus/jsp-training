@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" 
+           uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" 
+           uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,17 +14,17 @@
 	<h1>${message}</h1>
 	<h2><%=request.getAttribute("message") %></h2>
 	
-	<jsp:useBean id="aBean" scope="request" class="com.indivaragroup.training.jsp.model.ABean"/>
-	<jsp:setProperty property="name" name="aBean" value="Budi"/>
-	
-	<p>My name is ${aBean.name}</p>
-	
 	<p>Transaction:</p>
 	<ul>
 		<li>ID: ${trx.trxId}</li>
 		<li>type: ${trx.trxType }</li>
-		<li>amount: ${trx.amount }</li>
-		<li>time: ${trx.trxTimestamp }</li>
+		<c:if test="${trx.amount > 100000000 }">
+		<li>amount (Mahal): <fmt:formatNumber value="${trx.amount }" pattern="0,000.00"/></li>
+		</c:if>
+		<c:if test="${trx.amount <= 100000000 }">
+		<li>amount (Murah): <fmt:formatNumber value="${trx.amount }" pattern="0,000.00"/></li>
+		</c:if>
+		<li>time: <fmt:formatDate value="${trx.trxTimestamp }" pattern="dd-MMM-yyyy"/></li>
 	</ul>
 </body>
 </html>
